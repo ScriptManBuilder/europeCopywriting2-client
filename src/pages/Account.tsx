@@ -342,6 +342,31 @@ const Account: React.FC = () => {
                               }}
                             >
                               <source src={videoSrc} type="video/mp4" />
+                              <track
+                                kind="subtitles"
+                                src={`/subtitles/courses/${course.id}-en.vtt`}
+                                srcLang="en"
+                                label="English"
+                                default
+                              />
+                              <track
+                                kind="subtitles"
+                                src={`/subtitles/courses/${course.id}-fr.vtt`}
+                                srcLang="fr"
+                                label="Français"
+                              />
+                              <track
+                                kind="subtitles"
+                                src={`/subtitles/courses/${course.id}-es.vtt`}
+                                srcLang="es"
+                                label="Español"
+                              />
+                              <track
+                                kind="subtitles"
+                                src={`/subtitles/courses/${course.id}-nl.vtt`}
+                                srcLang="nl"
+                                label="Nederlands"
+                              />
                               Your browser does not support the video tag.
                             </CourseVideo>
                           </div>
