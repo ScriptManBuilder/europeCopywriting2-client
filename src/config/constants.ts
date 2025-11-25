@@ -1,16 +1,17 @@
 // Contact Information Constants
 export const CONTACT_INFO = {
-  email: process.env.REACT_APP_SUPPORT_EMAIL || 'support@photoshop-ecourses.com',
-  phone: process.env.REACT_APP_SUPPORT_PHONE || '+14632639480',
-  phoneFormatted: process.env.REACT_APP_SUPPORT_PHONE_FORMATTED || '+1 (463) 263-9480',
+  email: process.env.REACT_APP_SUPPORT_EMAIL || 'support@copywritingecourses.com',
+  phone: process.env.REACT_APP_SUPPORT_PHONE || '+12295302424',
+  phoneFormatted: process.env.REACT_APP_SUPPORT_PHONE_FORMATTED || '+1 (229) 530-2424',
 } as const;
 
 // Company Information Constants
 export const COMPANY_INFO = {
-  name: process.env.REACT_APP_COMPANY_NAME || 'Elariosso Digital',
-  websiteUrl: process.env.REACT_APP_WEBSITE_URL || 'photoshop-ecourses.com',
-  address: process.env.REACT_APP_COMPANY_ADDRESS || '1350 Tumbleweed Way, Sacramento, CA, USA, 95834',
-  owner: process.env.REACT_APP_COMPANY_OWNER || 'Elariosso Digital',
+  name: process.env.REACT_APP_COMPANY_NAME || 'Correlia ADS Ltd.',
+  websiteUrl: process.env.REACT_APP_WEBSITE_URL || 'copywritingecourses.com',
+  address: process.env.REACT_APP_COMPANY_ADDRESS || '60 Horseferry Road, London, SW1P 2AF, UK',
+  owner: process.env.REACT_APP_COMPANY_OWNER || 'Correlia ADS Ltd.',
+  director: process.env.REACT_APP_COMPANY_DIRECTOR || 'Atanas Davidov',
 } as const;
 
 // API Configuration
