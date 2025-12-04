@@ -5,7 +5,7 @@ import { products } from '../data/products';
 import { usePrice } from '../hooks/usePrice';
 import { RocketIcon, LightningIcon, ShieldIcon, GlobeIcon, TargetIcon, DiamondIcon } from '../components/FeatureIcons';
 import LazyImage from '../components/LazyImage';
-import { COMPANY_INFO, CONTACT_INFO } from '../config/constants';
+import { COMPANY_INFO, CONTACT_INFO, MEMBERSHIP_CONFIG } from '../config/constants';
 import {
   HeroSection,
   HeroVideo,
@@ -669,7 +669,7 @@ const Home: React.FC = () => {
               margin: '0 auto',
               lineHeight: '1.6'
             }}>
-              Unlock exclusive benefits and save 20% on all copywriting courses with our VIP Membership
+              Unlock exclusive benefits and save {MEMBERSHIP_CONFIG.vip.discountPercentage}% on all copywriting courses with our VIP Membership
             </p>
           </div>
 
@@ -677,14 +677,14 @@ const Home: React.FC = () => {
             <InfoBlock style={{ background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(10px)', borderRadius: '16px', padding: '32px', border: '1px solid rgba(255,255,255,0.2)' }}>
               <InfoTitle style={{ color: 'white' }}>💰 Membership Value</InfoTitle>
               <InfoDescription style={{ color: 'rgba(255,255,255,0.9)' }}>
-                Our VIP Membership is priced at just <strong style={{ fontSize: '1.3rem', color: 'white' }}>$9.99 per month</strong> with a 
+                Our VIP Membership is priced at just <strong style={{ fontSize: '1.3rem', color: 'white' }}>{formatPrice(MEMBERSHIP_CONFIG.vip.monthlyPrice)} per month</strong> with a 
                 <strong> 3-day free trial</strong>. Experience all the benefits risk-free before committing.
               </InfoDescription>
               
               <InfoSubsection>
                 <InfoSubtitle style={{ color: 'white' }}>What's Included:</InfoSubtitle>
                 <InfoText style={{ color: 'rgba(255,255,255,0.9)' }}>
-                  <strong style={{ color: 'white', background: 'rgba(255,255,255,0.2)', padding: '2px 8px', borderRadius: '4px' }}>20% discount on all courses</strong> • 
+                  <strong style={{ color: 'white', background: 'rgba(255,255,255,0.2)', padding: '2px 8px', borderRadius: '4px' }}>{MEMBERSHIP_CONFIG.vip.discountPercentage}% discount on all courses</strong> • 
                   Priority customer support • Exclusive member-only content • Early access to new courses • 
                   Monthly live Q&A sessions • Advanced course materials
                 </InfoText>
@@ -694,15 +694,15 @@ const Home: React.FC = () => {
             <InfoBlock style={{ background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(10px)', borderRadius: '16px', padding: '32px', border: '1px solid rgba(255,255,255,0.2)' }}>
               <InfoTitle style={{ color: 'white' }}>💳 Billing & Duration</InfoTitle>
               <InfoDescription style={{ color: 'rgba(255,255,255,0.9)' }}>
-                Simple and transparent monthly billing. You will be charged <strong>$9.99 every 30 days</strong> after 
+                Simple and transparent monthly billing. You will be charged <strong>{formatPrice(MEMBERSHIP_CONFIG.vip.monthlyPrice)} every 30 days</strong> after 
                 your free trial ends. Billing occurs automatically on the same date each month.
               </InfoDescription>
               
               <InfoSubsection>
                 <InfoSubtitle style={{ color: 'white' }}>Billing Timeline:</InfoSubtitle>
                 <InfoText style={{ color: 'rgba(255,255,255,0.9)' }}>
-                  <strong>Days 1-3:</strong> Free trial (no charges) → <strong>Day 4:</strong> First billing of $9.99 → 
-                  <strong> Every 30 days:</strong> Automatic renewal at $9.99 until cancelled
+                  <strong>Days 1-3:</strong> Free trial (no charges) → <strong>Day 4:</strong> First billing of {formatPrice(MEMBERSHIP_CONFIG.vip.monthlyPrice)} → 
+                  <strong> Every 30 days:</strong> Automatic renewal at {formatPrice(MEMBERSHIP_CONFIG.vip.monthlyPrice)} until cancelled
                 </InfoText>
               </InfoSubsection>
             </InfoBlock>
