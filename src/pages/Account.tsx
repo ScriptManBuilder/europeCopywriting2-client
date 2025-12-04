@@ -419,6 +419,12 @@ const Account: React.FC = () => {
                       
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                          <span style={{ color: '#718096', fontSize: '0.95rem' }}>Videos</span>
+                          <span style={{ fontWeight: '600', color: '#2d3748' }}>
+                            {course.videos.length} {course.videos.length === 1 ? 'video' : 'videos'}
+                          </span>
+                        </div>
+                        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                           <span style={{ color: '#718096', fontSize: '0.95rem' }}>Duration</span>
                           <span style={{ fontWeight: '600', color: '#2d3748' }}>
                             {course.id <= 4 ? '18-42 min' : course.id <= 7 ? '38-54 min' : '28-60 min'}

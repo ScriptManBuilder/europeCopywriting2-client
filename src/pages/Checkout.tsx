@@ -1730,25 +1730,47 @@ const Checkout: React.FC = () => {
 
             {hasPendingMembership && (
               <MembershipSection>
-                <MembershipTitle>VIP Membership Included</MembershipTitle>
+                <MembershipTitle>🌟 VIP Membership Included</MembershipTitle>
                 <MembershipDetails>
                   <p style={{ margin: '0 0 16px 0', fontSize: '0.95rem', lineHeight: '1.5' }}>
                     🎉 You've selected our VIP membership! This will be included in your order with these exclusive benefits:
                   </p>
                   
                   <MembershipBenefits>
-                    <MembershipBenefit>20% discount on all courses</MembershipBenefit>
-                    <MembershipBenefit>Priority customer support</MembershipBenefit>
-                    <MembershipBenefit>Exclusive member-only content</MembershipBenefit>
-                    <MembershipBenefit>Early access to new courses</MembershipBenefit>
-                    <MembershipBenefit>Monthly live Q&A sessions</MembershipBenefit>
-                    <MembershipBenefit>Advanced course materials</MembershipBenefit>
+                    <MembershipBenefit>✅ 20% discount on all courses</MembershipBenefit>
+                    <MembershipBenefit>✅ Priority customer support</MembershipBenefit>
+                    <MembershipBenefit>✅ Exclusive member-only content</MembershipBenefit>
+                    <MembershipBenefit>✅ Early access to new courses</MembershipBenefit>
+                    <MembershipBenefit>✅ Monthly live Q&A sessions</MembershipBenefit>
+                    <MembershipBenefit>✅ Advanced course materials</MembershipBenefit>
                   </MembershipBenefits>
 
                   <MembershipPricing>
-                    <MembershipPrice>3-Day Free Trial → 19.99 €/month</MembershipPrice>
-                    <MembershipTrial>Cancel anytime • No commitment required</MembershipTrial>
+                    <MembershipPrice>💰 $9.99/month • 3-Day Free Trial</MembershipPrice>
+                    <MembershipTrial>⚡ Cancel anytime • No commitment required</MembershipTrial>
                   </MembershipPricing>
+
+                  <div style={{ 
+                    marginTop: '20px', 
+                    padding: '16px', 
+                    background: 'rgba(255, 255, 255, 0.15)', 
+                    borderRadius: '12px',
+                    fontSize: '0.9rem',
+                    lineHeight: '1.6'
+                  }}>
+                    <p style={{ margin: '0 0 12px 0', fontWeight: '600' }}>
+                      📋 Important Subscription Information:
+                    </p>
+                    <ul style={{ margin: 0, paddingLeft: '20px' }}>
+                      <li><strong>Billing Cycle:</strong> You will be billed monthly ($9.99) after your 3-day trial ends</li>
+                      <li><strong>Auto-Renewal:</strong> Subscription automatically renews every 30 days unless cancelled</li>
+                      <li><strong>Cancellation:</strong> Cancel anytime by contacting us at least 24-48 hours before next billing</li>
+                      <li><strong>Access Retention:</strong> Keep lifetime access to all purchased courses even after cancelling</li>
+                    </ul>
+                    <p style={{ margin: '12px 0 0 0', fontSize: '0.85rem' }}>
+                      📄 For complete details, see our <a href="/subscription-policy" style={{ color: 'white', textDecoration: 'underline', fontWeight: '600' }}>Subscription Policy</a>
+                    </p>
+                  </div>
                 </MembershipDetails>
               </MembershipSection>
             )}
@@ -1842,11 +1864,17 @@ const Checkout: React.FC = () => {
                   onChange={(e) => setAgreeToTerms(e.target.checked)}
                 />
                 <TermsText>
-                  I am 18 years or older and agree to the<a href="/terms-conditions"> Terms & Conditions</a>, <a href="/refund-policy">Refund Policy</a>. 
+                  I am 18 years or older and agree to the <a href="/terms-conditions">Terms & Conditions</a>, <a href="/refund-policy">Refund Policy</a>
+                  {hasPendingMembership && <>, and <a href="/subscription-policy">Subscription Policy</a></>}. 
                   I agree to pay the total amount provided on the checkout page. Upon successful payment, I will receive instant access to all course materials. 
-                  To request a refund, please contact our customer service team CST Mon-Fri (9am-6pm) at {CONTACT_INFO.phoneFormatted} or email {CONTACT_INFO.email} within 30 days of purchase. 
+                  {hasPendingMembership && (
+                    <> <strong>I understand that I will be billed on a monthly basis ($9.99/month) unless the membership is cancelled.</strong> After my 3-day free trial ends, 
+                    I will be automatically charged $9.99 every 30 days. I can cancel anytime by contacting customer service at least 24-48 hours before my next billing date. 
+                    For complete details, visit our <a href="/subscription-policy">Subscription Policy</a> page. </>
+                  )}
+                  To request a refund, please contact our customer service team CST Mon-Fri (8am-6pm) at {CONTACT_INFO.phoneFormatted} or email {CONTACT_INFO.email} within 30 days of purchase. 
                   For guidelines on refunds please visit our <a href="/refund-policy">Refund Policy</a> page. 
-                  Your credit card will be billed with the following descriptor: COPYWRITING.ECOURSES. This is how the 
+                  Your credit card will be billed with the following descriptor: <strong>COPYWRITING.ECOURSES</strong>. This is how the 
                   charge will appear on the cardholder's billing statement. Course access will be provided immediately after successful payment.
                 </TermsText>
               </CheckboxContainer>

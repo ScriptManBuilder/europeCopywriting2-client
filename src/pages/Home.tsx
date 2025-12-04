@@ -5,7 +5,7 @@ import { products } from '../data/products';
 import { usePrice } from '../hooks/usePrice';
 import { RocketIcon, LightningIcon, ShieldIcon, GlobeIcon, TargetIcon, DiamondIcon } from '../components/FeatureIcons';
 import LazyImage from '../components/LazyImage';
-import { COMPANY_INFO } from '../config/constants';
+import { COMPANY_INFO, CONTACT_INFO } from '../config/constants';
 import {
   HeroSection,
   HeroVideo,
@@ -645,6 +645,144 @@ const Home: React.FC = () => {
         </ScrollingTextBanner>
       </PhotoGallerySection>
 
+      {/* VIP Membership Section */}
+      <InfoSection style={{ 
+        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        padding: '80px 0',
+        marginTop: 0
+      }}>
+        <Container>
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+            <h2 style={{ 
+              fontSize: '2.5rem', 
+              fontWeight: '700', 
+              color: 'white',
+              marginBottom: '16px',
+              textShadow: '0 2px 10px rgba(0,0,0,0.2)'
+            }}>
+              🌟 VIP Membership Benefits
+            </h2>
+            <p style={{ 
+              fontSize: '1.2rem', 
+              color: 'rgba(255,255,255,0.95)',
+              maxWidth: '700px',
+              margin: '0 auto',
+              lineHeight: '1.6'
+            }}>
+              Unlock exclusive benefits and save 20% on all copywriting courses with our VIP Membership
+            </p>
+          </div>
+
+          <InfoGrid>
+            <InfoBlock style={{ background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(10px)', borderRadius: '16px', padding: '32px', border: '1px solid rgba(255,255,255,0.2)' }}>
+              <InfoTitle style={{ color: 'white' }}>💰 Membership Value</InfoTitle>
+              <InfoDescription style={{ color: 'rgba(255,255,255,0.9)' }}>
+                Our VIP Membership is priced at just <strong style={{ fontSize: '1.3rem', color: 'white' }}>$9.99 per month</strong> with a 
+                <strong> 3-day free trial</strong>. Experience all the benefits risk-free before committing.
+              </InfoDescription>
+              
+              <InfoSubsection>
+                <InfoSubtitle style={{ color: 'white' }}>What's Included:</InfoSubtitle>
+                <InfoText style={{ color: 'rgba(255,255,255,0.9)' }}>
+                  <strong style={{ color: 'white', background: 'rgba(255,255,255,0.2)', padding: '2px 8px', borderRadius: '4px' }}>20% discount on all courses</strong> • 
+                  Priority customer support • Exclusive member-only content • Early access to new courses • 
+                  Monthly live Q&A sessions • Advanced course materials
+                </InfoText>
+              </InfoSubsection>
+            </InfoBlock>
+
+            <InfoBlock style={{ background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(10px)', borderRadius: '16px', padding: '32px', border: '1px solid rgba(255,255,255,0.2)' }}>
+              <InfoTitle style={{ color: 'white' }}>💳 Billing & Duration</InfoTitle>
+              <InfoDescription style={{ color: 'rgba(255,255,255,0.9)' }}>
+                Simple and transparent monthly billing. You will be charged <strong>$9.99 every 30 days</strong> after 
+                your free trial ends. Billing occurs automatically on the same date each month.
+              </InfoDescription>
+              
+              <InfoSubsection>
+                <InfoSubtitle style={{ color: 'white' }}>Billing Timeline:</InfoSubtitle>
+                <InfoText style={{ color: 'rgba(255,255,255,0.9)' }}>
+                  <strong>Days 1-3:</strong> Free trial (no charges) → <strong>Day 4:</strong> First billing of $9.99 → 
+                  <strong> Every 30 days:</strong> Automatic renewal at $9.99 until cancelled
+                </InfoText>
+              </InfoSubsection>
+            </InfoBlock>
+
+            <InfoBlock style={{ background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(10px)', borderRadius: '16px', padding: '32px', border: '1px solid rgba(255,255,255,0.2)' }}>
+              <InfoTitle style={{ color: 'white' }}>🚫 Cancellation Policy</InfoTitle>
+              <InfoDescription style={{ color: 'rgba(255,255,255,0.9)' }}>
+                Cancel anytime with <strong>no penalties or fees</strong>. Simply contact our support team at least 
+                24-48 hours before your next billing date to avoid being charged for the next cycle.
+              </InfoDescription>
+              
+              <InfoSubsection>
+                <InfoSubtitle style={{ color: 'white' }}>How to Cancel:</InfoSubtitle>
+                <InfoText style={{ color: 'rgba(255,255,255,0.9)' }}>
+                  Contact us at <strong style={{ color: 'white', background: 'rgba(255,255,255,0.2)', padding: '2px 8px', borderRadius: '4px' }}>{CONTACT_INFO.phoneFormatted}</strong> or 
+                  email <strong style={{ color: 'white', background: 'rgba(255,255,255,0.2)', padding: '2px 8px', borderRadius: '4px' }}>{CONTACT_INFO.email}</strong>. 
+                  You'll keep lifetime access to all purchased courses even after cancellation.
+                </InfoText>
+              </InfoSubsection>
+            </InfoBlock>
+
+            <InfoBlock style={{ background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(10px)', borderRadius: '16px', padding: '32px', border: '1px solid rgba(255,255,255,0.2)' }}>
+              <InfoTitle style={{ color: 'white' }}>📋 Membership Terms</InfoTitle>
+              <InfoDescription style={{ color: 'rgba(255,255,255,0.9)' }}>
+                Your membership will <strong>automatically renew</strong> each month unless cancelled. 
+                All purchased courses remain accessible forever, even after membership ends.
+              </InfoDescription>
+              
+              <InfoSubsection>
+                <InfoSubtitle style={{ color: 'white' }}>Important Details:</InfoSubtitle>
+                <InfoText style={{ color: 'rgba(255,255,255,0.9)' }}>
+                  Monthly billing continues until you cancel • No refunds on membership fees • 
+                  Course access is permanent • Cancel anytime via customer support • 
+                  Full details in our <Link to="/subscription-policy" style={{ color: 'white', textDecoration: 'underline', fontWeight: '600' }}>Subscription Policy</Link>
+                </InfoText>
+              </InfoSubsection>
+            </InfoBlock>
+          </InfoGrid>
+
+          <div style={{ 
+            textAlign: 'center', 
+            marginTop: '48px',
+            padding: '32px',
+            background: 'rgba(255,255,255,0.15)',
+            borderRadius: '16px',
+            border: '1px solid rgba(255,255,255,0.3)'
+          }}>
+            <p style={{ 
+              fontSize: '1.1rem',
+              color: 'white',
+              margin: '0 0 24px 0',
+              fontWeight: '600'
+            }}>
+              ⚡ Start your copywriting journey with VIP benefits today!
+            </p>
+            <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <Button as={Link} to="/products" variant="primary" style={{
+                background: 'white',
+                color: '#667eea',
+                border: 'none',
+                padding: '14px 32px',
+                fontSize: '1.1rem',
+                fontWeight: '700'
+              }}>
+                Browse Courses with VIP Discount
+              </Button>
+              <Button as={Link} to="/subscription-policy" variant="outline" style={{
+                borderColor: 'white',
+                color: 'white',
+                padding: '14px 32px',
+                fontSize: '1.1rem',
+                fontWeight: '700'
+              }}>
+                View Full Subscription Policy
+              </Button>
+            </div>
+          </div>
+        </Container>
+      </InfoSection>
+
       {/* Information Section */}
       <InfoSection>
         <InfoGrid>
@@ -659,8 +797,7 @@ const Home: React.FC = () => {
             <InfoSubsection>
               <InfoSubtitle>Professional Copywriting Development</InfoSubtitle>
               <InfoText>
-                Master <InfoHighlight>advanced copywriting techniques </InfoHighlight> 
-                 that deliver compelling, high-converting marketing content. From basic fundamentals to 
+                Master <strong>advanced copywriting techniques</strong> that deliver compelling, high-converting marketing content. From basic fundamentals to 
                 complex sales psychology, learn to create industry-standard copy.
               </InfoText>
             </InfoSubsection>
@@ -676,7 +813,7 @@ const Home: React.FC = () => {
             <InfoSubsection>
               <InfoSubtitle>Industry-Proven Methods</InfoSubtitle>
               <InfoText>
-                Learn <InfoHighlight>battle-tested copywriting strategies</InfoHighlight> used by 
+                Learn <strong>battle-tested copywriting strategies</strong> used by 
                 top marketing agencies and direct response experts. From concept development to final copy, 
                 master techniques that deliver measurable results.
               </InfoText>
@@ -693,7 +830,7 @@ const Home: React.FC = () => {
             <InfoSubsection>
               <InfoSubtitle>Always Up-to-Date Content</InfoSubtitle>
               <InfoText>
-                Access <InfoHighlight>regularly updated curriculum</InfoHighlight> that 
+                Access <strong>regularly updated curriculum</strong> that 
                 evolves with marketing technology. New strategies, tools, and techniques are 
                 added monthly to keep your skills current.
               </InfoText>
@@ -710,8 +847,7 @@ const Home: React.FC = () => {
             <InfoSubsection>
               <InfoSubtitle>24/7 Community Access</InfoSubtitle>
               <InfoText>
-                Connect with <InfoHighlight>hundreds of copywriting learners worldwide </InfoHighlight> 
-                through our exclusive community platform. Share copy samples, get feedback, 
+                Connect with <strong>hundreds of copywriting learners worldwide</strong> through our exclusive community platform. Share copy samples, get feedback, 
                 and collaborate on copywriting projects.
               </InfoText>
             </InfoSubsection>

@@ -1,42 +1,6 @@
-// API base URL
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:3008';
+// Static mode - No backend API calls
+// This file is kept for compatibility but all functions are disabled for static mode
 
-// Utility функция для запросов с токеном
-const apiRequest = async (endpoint: string, options: RequestInit = {}) => {
-  const token = localStorage.getItem('access_token');
-  
-  const config: RequestInit = {
-    headers: {
-      'Content-Type': 'application/json',
-      ...options.headers,
-    },
-    ...options,
-  };
-
-  if (token) {
-    config.headers = {
-      ...config.headers,
-      Authorization: `Bearer ${token}`,
-    };
-  }
-
-  const response = await fetch(`${API_BASE_URL}${endpoint}`, config);
-  
-  if (!response.ok) {
-    let errorMessage = 'Request failed';
-    try {
-      const error = await response.json();
-      errorMessage = error.message || errorMessage;
-    } catch {
-      // Если не удается распарсить ошибку, используем стандартное сообщение
-    }
-    throw new Error(errorMessage);
-  }
-  
-  return response.json();
-};
-
-// Интерфейсы для типизации
 export interface User {
   id: number;
   email: string;
@@ -68,103 +32,75 @@ export interface ProfileResponse {
   message: string;
 }
 
-// Функции аутентификации
+// Static authentication - managed by AuthContext
 export const authAPI = {
-  // Регистрация
   signup: async (userData: SignupData): Promise<AuthResponse> => {
-    const data = await apiRequest('/auth/signup', {
-      method: 'POST',
-      body: JSON.stringify(userData),
-    });
-    
-    // Автоматически сохраняем токен
-    localStorage.setItem('access_token', data.access_token);
-    return data;
+    throw new Error('Static mode: Use AuthContext for authentication');
   },
 
-  // Авторизация
   signin: async (credentials: SigninData): Promise<AuthResponse> => {
-    const data = await apiRequest('/auth/signin', {
-      method: 'POST',
-      body: JSON.stringify(credentials),
-    });
-    
-    // Автоматически сохраняем токен
-    localStorage.setItem('access_token', data.access_token);
-    return data;
+    throw new Error('Static mode: Use AuthContext for authentication');
   },
 
-  // Выход
   signout: (): void => {
-    localStorage.removeItem('access_token');
+    // Compatibility - does nothing in static mode
   },
 
-  // Получение профиля
-  getProfile: (): Promise<ProfileResponse> => apiRequest('/auth/profile'),
+  getProfile: (): Promise<ProfileResponse> => {
+    throw new Error('Static mode: Use AuthContext for user data');
+  },
 
-  // Проверка токена
   isAuthenticated: (): boolean => {
-    const token = localStorage.getItem('access_token');
-    return !!token;
+    return !!localStorage.getItem('static_user');
   },
 
-  // Тестовый защищенный маршрут
-  test: (): Promise<any> => apiRequest('/auth/test'),
+  test: (): Promise<any> => {
+    throw new Error('Static mode: Backend test not available');
+  },
 };
 
-// Функции для работы с пользователями
+// Static mode - users API disabled
 export const usersAPI = {
-  // Получить всех пользователей
-  getAll: (): Promise<User[]> => apiRequest('/users'),
+  getAll: (): Promise<User[]> => {
+    throw new Error('Static mode: Users API not available');
+  },
 
-  // Получить пользователя по ID
-  getById: (id: number): Promise<User> => apiRequest(`/users/${id}`),
+  getById: (id: number): Promise<User> => {
+    throw new Error('Static mode: Users API not available');
+  },
 
-  // Создать пользователя
-  create: (userData: Partial<User>): Promise<User> => apiRequest('/users', {
-    method: 'POST',
-    body: JSON.stringify(userData),
-  }),
+  create: (userData: Partial<User>): Promise<User> => {
+    throw new Error('Static mode: Users API not available');
+  },
 
-  // Обновить пользователя
-  update: (id: number, userData: Partial<User>): Promise<User> => apiRequest(`/users/${id}`, {
-    method: 'PATCH',
-    body: JSON.stringify(userData),
-  }),
+  update: (id: number, userData: Partial<User>): Promise<User> => {
+    throw new Error('Static mode: Users API not available');
+  },
 
-  // Удалить пользователя
-  delete: (id: number): Promise<void> => apiRequest(`/users/${id}`, {
-    method: 'DELETE',
-  }),
+  delete: (id: number): Promise<void> => {
+    throw new Error('Static mode: Users API not available');
+  },
 };
 
-// Функция для проверки состояния сервера
+// Static mode - health check disabled
 export const healthAPI = {
   check: (): Promise<{
     status: string;
     timestamp: string;
     uptime: number;
     message: string;
-  }> => apiRequest('/health'),
+  }> => {
+    throw new Error('Static mode: Health check not available');
+  },
 };
 
-// Вспомогательные функции
+// Token utilities for static mode
 export const tokenUtils = {
-  getToken: (): string | null => localStorage.getItem('access_token'),
-  setToken: (token: string): void => localStorage.setItem('access_token', token),
-  removeToken: (): void => localStorage.removeItem('access_token'),
+  getToken: (): string | null => null,
+  setToken: (token: string): void => {},
+  removeToken: (): void => {},
   isTokenValid: (): boolean => {
-    const token = localStorage.getItem('access_token');
-    if (!token) return false;
-    
-    try {
-      // Простая проверка токена (в реальном приложении можно добавить проверку срока действия)
-      const payload = JSON.parse(atob(token.split('.')[1]));
-      const currentTime = Date.now() / 1000;
-      return payload.exp > currentTime;
-    } catch {
-      return false;
-    }
+    return !!localStorage.getItem('static_user');
   },
 };
 
