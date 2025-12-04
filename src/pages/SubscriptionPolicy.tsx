@@ -299,7 +299,7 @@ const SubscriptionPolicy: React.FC = () => {
 
             <List>
               <li><strong>Phone:</strong> {CONTACT_INFO.phoneFormatted} (Available CST Mon-Fri 8am-6pm)</li>
-              <li><strong>Email:</strong> <a href={`mailto:${CONTACT_INFO.email}`}>{CONTACT_INFO.email}</a></li>
+              <li><strong>Email:</strong> {CONTACT_INFO.email}</li>
               <li><strong>Response Time:</strong> Within 30 days of your cancellation request</li>
             </List>
 
@@ -374,7 +374,7 @@ const SubscriptionPolicy: React.FC = () => {
             <h3>📞 Need Help or Have Questions?</h3>
             <p>Our customer support team is here to assist you with any questions about your membership.</p>
             <p><strong>Phone:</strong> {CONTACT_INFO.phoneFormatted}</p>
-            <p><strong>Email:</strong> <a href={`mailto:${CONTACT_INFO.email}`}>{CONTACT_INFO.email}</a></p>
+            <p><strong>Email:</strong> {CONTACT_INFO.email}</p>
             <p><strong>Hours:</strong> CST Monday-Friday, 8:00 AM - 6:00 PM</p>
             <p style={{ marginTop: '16px', fontSize: '0.95rem' }}>
               Please allow up to 30 days for cancellation requests to be processed.
