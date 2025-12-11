@@ -169,6 +169,43 @@ export const PromoCardContent = styled.div`
   }
 `;
 
+export const PaymentLogos = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 30px 0;
+  margin-top: 20px;
+  border-top: 1px solid #e5e7eb;
+  
+  @media (max-width: 768px) {
+    gap: 16px;
+    padding: 20px 0;
+    flex-wrap: wrap;
+  }
+`;
+
+export const PaymentLogoImage = styled.img`
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  filter: none;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+  
+  &:hover {
+    opacity: 1;
+  }
+  
+  @media (max-width: 768px) {
+    height: 28px;
+  }
+  
+  @media (max-width: 480px) {
+    height: 24px;
+  }
+`;
+
 export const FooterBottom = styled.div`
   border-top: 1px solid #e5e7eb;
   padding-top: 30px;

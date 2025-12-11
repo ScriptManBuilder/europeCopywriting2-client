@@ -150,7 +150,7 @@ const TermsConditions: React.FC = () => {
       <Section>
         <SectionTitle>10. Limitation of Liability</SectionTitle>
         <Paragraph>
-          {COMPANY_INFO.name} provides Adobe Photoshop courses for educational purposes only. We make no guarantees about 
+          {COMPANY_INFO.name} provides copywriting courses for educational purposes only. We make no guarantees about 
           specific outcomes, career advancement, or income generation from course completion. Results may vary based on 
           individual effort and application of course materials.
         </Paragraph>
@@ -164,7 +164,7 @@ const TermsConditions: React.FC = () => {
         <SectionTitle>11. Governing Law</SectionTitle>
         <Paragraph>
           These terms and conditions are governed by and construed in accordance with 
-          the laws of the State of Wyoming, United States. Any disputes will be resolved in the courts of Wyoming.
+          the laws of England and Wales, United Kingdom. Any disputes will be resolved in the courts of England and Wales.
         </Paragraph>
       </Section>
 

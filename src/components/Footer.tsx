@@ -11,7 +11,9 @@ import {
   PromoCard,
   PromoCardContent,
   FooterBottom,
-  Copyright
+  Copyright,
+  PaymentLogos,
+  PaymentLogoImage
 } from '../styles/components/FooterStyles';
 
 const Footer: React.FC = () => {
@@ -81,9 +83,15 @@ const Footer: React.FC = () => {
           </MoreAboutSection>
         </FooterMain>
 
+        <PaymentLogos>
+          <PaymentLogoImage src="/images/visa.svg" alt="Visa" />
+          <PaymentLogoImage src="/images/mastercard.svg" alt="Mastercard" />
+          <PaymentLogoImage src="/images/sepa-logo.png" alt="SEPA" />
+        </PaymentLogos>
+
         <FooterBottom>
           <Copyright>
-            Copyright  2025 {COMPANY_INFO.name}. All rights reserved. | Premium Copywriting Education & Training Courses
+            Copyright  2025 {COMPANY_INFO.name} All rights reserved. | Premium Copywriting Education & Training Courses
           </Copyright>
         </FooterBottom>
       </FooterContent>

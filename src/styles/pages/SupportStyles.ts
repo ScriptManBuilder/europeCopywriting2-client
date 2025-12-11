@@ -273,11 +273,13 @@ export const ContactLink = styled.a`
 export const ContactText = styled.span`
   color: #667eea;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   word-break: break-all;
+  display: block;
+  line-height: 1.4;
   
   @media (max-width: 480px) {
-    font-size: 1rem;
+    font-size: 0.85rem;
   }
 `;
 
