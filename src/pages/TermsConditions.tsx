@@ -81,7 +81,7 @@ const TermsConditions: React.FC = () => {
           We accept major credit and debit cards for copywriting course purchases. Your payment information is processed securely through our payment processors using 256-bit SSL encryption.
         </Paragraph>
         <Paragraph>
-          <strong>Billing Descriptor:</strong> Charges will appear on your credit card statement as "COPYWRITING COURSES" or "COPYWRITING.ECOURSES". 
+          <strong>Billing Descriptor:</strong> Charges will appear on your credit card statement as "cpwrt.com". 
           This is how the charge will appear on your cardholder's billing statement.
         </Paragraph>
       </Section>

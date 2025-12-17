@@ -281,7 +281,7 @@ const SubscriptionPolicy: React.FC = () => {
 
             <SubSectionTitle>Billing Descriptor</SubSectionTitle>
             <Paragraph>
-              On your credit card or bank statement, the charge will appear as <strong>"COPYWRITING.ECOURSES"</strong>. This helps you identify the transaction easily when reviewing your statements.
+              On your credit card or bank statement, the charge will appear as <strong>"cpwrt.com"</strong>. This helps you identify the transaction easily when reviewing your statements.
             </Paragraph>
           </Section>
 
